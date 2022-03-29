@@ -5,7 +5,8 @@ function App() {
   const [state, setState] = useState();
 
   const getQuote = async () => {
-    const response = await fetch('http://localhost:3001/api');
+    const response = await fetch(process.env.REACT_APP_API_URL);
+    console.log(process.env.REACT_APP_API_URL)
     const data = await response.json();
     setState(data);
   };
